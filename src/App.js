@@ -18,7 +18,7 @@ function App() {
     saveLocalTodos()
   }, [todos, status])
 
-  const filterHandler = () => {
+  const filterHandler = () => {                 //обробник фільтра
     switch (status) {
       case 'completed':
         setFilteredTodos(todos.filter(todo => todo.completed === true))
@@ -32,11 +32,11 @@ function App() {
     }
   }
 
-  const saveLocalTodos = () => {
+  const saveLocalTodos = () => {                   //зберегти todo
     localStorage.setItem("todos", JSON.stringify(todos))
   }
 
-  const getLocalTodos = () => {
+  const getLocalTodos = () => {                     //отримати todo
     if (localStorage.getItem("todos") === null) {
       localStorage.setItem('todos', JSON.stringify([]))
     } else {
@@ -57,7 +57,7 @@ function App() {
         setInputText={setInputText}
         setStatus={setStatus}
       />
-      <TodoList
+      <TodoList            
         todos={todos}
         setTodos={setTodos}
         filteredTodos={filteredTodos}
