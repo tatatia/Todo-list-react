@@ -5,7 +5,7 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
     const inputTextHendler = (e) => { //обработчик введеного тексту
         setInputText(e.target.value)
     }
-    const submitTodoHandler = (e) => {
+    const submitTodoHandler = (e) => {    //подати
         e.preventDefault()
         setTodos([
             ...todos, { text: inputText, completed: false, id: Math.random() * 1000 }

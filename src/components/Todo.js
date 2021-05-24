@@ -2,10 +2,10 @@ import React from "react"
 
 const Todo = ({ text, todo, setTodos, todos }) => {
     //події-Events
-    const deleteHandler = () => {
+    const deleteHandler = () => {         //видалити
         setTodos(todos.filter((el) => el.id !== todo.id))
     }
-    const completeHandler = () => {
+    const completeHandler = () => {      //обробити
         setTodos(
             todos.map((item) => {
                 if (item.id === todo.id) {
